@@ -37,5 +37,6 @@ Thumbs.db
 *.out
 *.log
 src/*.bin
+src/image
 /inputs
 /images

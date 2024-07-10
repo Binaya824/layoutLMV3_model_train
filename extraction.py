@@ -6,38 +6,33 @@ from transformers import LayoutLMv3Processor, LayoutLMv3ForTokenClassification
 import json
 
 # Load the trained LayoutLMv3 model and processor
-model_name_or_path = "hmart824/layoutlmv3"  # Update with your model path
+model_name_or_path = "hmart824/layoutlmv3-finetuned_0.1.3"  # Update with your model path
 
 try:
-    processor = LayoutLMv3Processor.from_pretrained(model_name_or_path , apply_ocr=False)
+    processor = LayoutLMv3Processor.from_pretrained(model_name_or_path, apply_ocr=False)
     model = LayoutLMv3ForTokenClassification.from_pretrained(model_name_or_path)
 except Exception as e:
     print(f"Error loading model '{model_name_or_path}': {str(e)}")
     processor, model = None, None  # Set processor and model to None if loading fails
 
 def extract_text_from_page(page):
-    words = []
-    boxes = []
+    sentences = []
+    lines = page.get_text("blocks")
+    
+    for line in lines:
+        if line[4]:  # Ensure there is text in the block
+            sentences.append((line[4], fitz.Rect(line[:4])))
 
-    for word in page.get_text("words"):
-        words.append(word[4])
-        boxes.append(fitz.Rect(word[:4]))
-
-    return words, boxes
-
-def normalize_bbox(bbox, width, height):
-    return [
-        int(1000 * bbox.x0 / width),
-        int(1000 * bbox.y0 / height),
-        int(1000 * bbox.x1 / width),
-        int(1000 * bbox.y1 / height),
-    ]
+    return sentences
 
 def page_to_image(page):
     pix = page.get_pixmap()
     img_bytes = pix.tobytes("ppm")
     img = Image.open(io.BytesIO(img_bytes))
     return img
+
+def convert_bbox_to_int(bbox):
+    return [int(coord) for coord in bbox]
 
 def process_pdf(file_path):
     if processor is None or model is None:
@@ -51,38 +46,48 @@ def process_pdf(file_path):
 
     for page_num in range(len(doc)):
         page = doc[page_num]
-        words, boxes = extract_text_from_page(page)
+        sentences = extract_text_from_page(page)
         width, height = page.rect.width, page.rect.height
 
         # Convert the page to an image
         image = page_to_image(page)
 
-        encoding = processor(
-            text=words,
-            images=image,
-            boxes=[normalize_bbox(box, width, height) for box in boxes],
-            return_tensors="pt",
-            padding="max_length",
-            truncation=True
-        )
-
-        with torch.no_grad():
-            outputs = model(**encoding)
-
-        predictions = outputs.logits.argmax(-1).squeeze().tolist()
-        tokens = processor.tokenizer.convert_ids_to_tokens(encoding.input_ids.squeeze().tolist())
-        token_boxes = encoding.bbox.squeeze().tolist()
-
         page_output = []
 
-        for token, box, prediction in zip(tokens, token_boxes, predictions):
-            if token in processor.tokenizer.all_special_tokens:
-                continue
-            label = model.config.id2label[prediction]
+        for sentence, bbox in sentences:
+            words = sentence.split()
+            encoding = processor(
+                text=words,
+                images=image,
+                boxes=[convert_bbox_to_int(bbox)] * len(words),
+                return_tensors="pt",
+                padding="max_length",
+                truncation=True
+            )
+
+            with torch.no_grad():
+                outputs = model(**encoding)
+
+            predictions = outputs.logits.argmax(-1).squeeze().tolist()
+            tokens = processor.tokenizer.convert_ids_to_tokens(encoding.input_ids.squeeze().tolist())
+            token_boxes = encoding.bbox.squeeze().tolist()
+
+            sentence_output = []
+
+            for token, box, prediction in zip(tokens, token_boxes, predictions):
+                if token in processor.tokenizer.all_special_tokens:
+                    continue
+                label = model.config.id2label[prediction]
+                sentence_output.append({
+                    "text": token,
+                    "bbox": box,
+                    "label": label
+                })
+
             page_output.append({
-                "text": token,
-                "bbox": box,
-                "label": label
+                "sentence": sentence,
+                "bbox": convert_bbox_to_int(bbox),
+                "content": sentence_output
             })
 
         json_output.append({
@@ -93,7 +98,7 @@ def process_pdf(file_path):
     return json_output
 
 def main():
-    pdf_path = "./T.S-GWR.pdf"  # Update with your PDF file path
+    pdf_path = "./Bokaro_Technical_Specification binaya modified.pdf"  # Update with your PDF file path
     result = process_pdf(pdf_path)
 
     if result:
