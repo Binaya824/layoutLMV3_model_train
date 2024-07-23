@@ -7,21 +7,17 @@ from loader import *
 from torch.optim import AdamW
 import numpy as np
 from engine import *
-import os
-
-current_script_directory = os.path.dirname(os.path.abspath(__file__))
-print("Current Script Directory:", current_script_directory)
 
 
 featur_extractor = LayoutLMv3FeatureExtractor(apply_ocr=False)
-tokeniser = LayoutLMv3TokenizerFast.from_pretrained("../inputs/layoutlmv3Microsoft",ignore_mismatched_sizes=True)
+tokeniser = LayoutLMv3TokenizerFast.from_pretrained("microsoft/layoutlmv3-base",ignore_mismatched_sizes=True)
 
 processor = LayoutLMv3Processor(tokenizer=tokeniser,feature_extractor=featur_extractor)
-model = LayoutLMv3ForTokenClassification.from_pretrained('../inputs/layoutlmv3Microsoft')
+model = LayoutLMv3ForTokenClassification.from_pretrained('microsoft/layoutlmv3-base')
 
 
 if __name__ == "__main__":
-    ds = dataSet('../inputs/Training_layoutLMV3.json',processor)
+    ds = dataSet('/home/binaya/Desktop/binaya/python/layoutLMV3_model_train/Training_layoutLMV3_alpha1.1.json',processor)
     dataload = torch.utils.data.DataLoader(ds,batch_size=2)
 
     # creating model instance
@@ -60,6 +56,5 @@ if __name__ == "__main__":
         print("Evaluation loss :",  eval_loss)
 
     np.array(loss_list).dump(open('loss_list.npy', 'wb'))
-
 
 

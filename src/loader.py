@@ -17,31 +17,41 @@ class dataSet:
         # print(self.json_data)
         return len(self.json_data)
 
-    def __getitem__(self,index)->dict:
-        imgs = []
-        words = []
-        label = []
-        bboxes = []
+    def __getitem__(self, index) -> dict:
         data = self.json_data[index]
-        
-        imgs.append(Image.open(data['img_path']).convert('RGB'))
-        words.append(data['tokens'])
-        label.append(data['ner_tag'])
-        bboxes.append(data['bboxes'])
 
+        # Open the image and prepare the tokens, labels, and bounding boxes
+        image = Image.open(data['img_path']).convert('RGB')
+        words = data['tokens']
+        label = data['ner_tag']
+        bboxes = data['bboxes']
+
+        # Ensure words, labels, and bboxes are lists
+        if not isinstance(words, list):
+            words = [words]
+        if not isinstance(label, list):
+            label = [label]
+        if not isinstance(bboxes, list):
+            bboxes = [bboxes]
+
+        # Process the input data using the processor
         encoding = self.processor(
-            imgs,
-            words,
-            boxes = bboxes,
-            word_labels = label,
-            max_length=512,padding="max_length",truncation="longest_first",return_tensors='pt'
+            images=image,
+            text=words,
+            boxes=bboxes,
+            word_labels=label,
+            max_length=512,
+            padding="max_length",
+            truncation=True,  # Use truncation=True to handle sequences longer than max_length
+            return_tensors='pt'
         )
 
+        # Flatten the tensors where appropriate and ensure correct dtype
         return {
-            "input_ids" : torch.tensor(encoding["input_ids"],dtype=torch.int64).flatten(),
-            "attention_mask" : torch.tensor(encoding["attention_mask"],dtype=torch.int64).flatten(),
-            "bbox" : torch.tensor(encoding["bbox"],dtype=torch.int64).flatten(end_dim=1),
-            "pixel_values" : torch.tensor(encoding["pixel_values"],dtype=torch.float32).flatten(end_dim=1),
-            "lables" : torch.tensor(encoding["labels"],dtype=torch.int64)
+            "input_ids": encoding["input_ids"].squeeze(0),
+            "attention_mask": encoding["attention_mask"].squeeze(0),
+            "bbox": encoding["bbox"].squeeze(0),
+            "pixel_values": encoding["pixel_values"].squeeze(0),
+            "labels": encoding["label"].squeeze(0)
         }
 

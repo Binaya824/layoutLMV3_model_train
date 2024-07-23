@@ -34,6 +34,21 @@ def page_to_image(page):
 def convert_bbox_to_int(bbox):
     return [int(coord) for coord in bbox]
 
+def generate_word_bboxes(sentence, bbox):
+    words = sentence.split()
+    word_bboxes = []
+    x1, y1, x2, y2 = bbox
+    word_width = (x2 - x1) / len(words)
+    for i, word in enumerate(words):
+        word_bbox = [
+            x1 + i * word_width,
+            y1,
+            x1 + (i + 1) * word_width,
+            y2
+        ]
+        word_bboxes.append(convert_bbox_to_int(word_bbox))
+    return words, word_bboxes
+
 def process_pdf(file_path):
     if processor is None or model is None:
         print("Model and processor are not loaded. Exiting...")
@@ -55,11 +70,11 @@ def process_pdf(file_path):
         page_output = []
 
         for sentence, bbox in sentences:
-            words = sentence.split()
+            words, word_bboxes = generate_word_bboxes(sentence, convert_bbox_to_int(bbox))
             encoding = processor(
-                text=words,
+                text=[words],  # Wrap the list of words in another list
                 images=image,
-                boxes=[convert_bbox_to_int(bbox)] * len(words),
+                boxes=[word_bboxes],  # Use the generated word bounding boxes
                 return_tensors="pt",
                 padding="max_length",
                 truncation=True
@@ -98,7 +113,7 @@ def process_pdf(file_path):
     return json_output
 
 def main():
-    pdf_path = "./Bokaro_Technical_Specification binaya modified.pdf"  # Update with your PDF file path
+    pdf_path = "./T.S-GWR binaya modified 15.pdf"  # Update with your PDF file path
     result = process_pdf(pdf_path)
 
     if result:
