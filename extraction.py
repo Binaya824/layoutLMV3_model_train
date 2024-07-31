@@ -6,7 +6,7 @@ from transformers import LayoutLMv3Processor, LayoutLMv3ForTokenClassification
 import json
 
 # Load the trained LayoutLMv3 model and processor
-model_name_or_path = "hmart824/layoutlmv3-finetuned_0.1.3"  # Update with your model path
+model_name_or_path = "hmart824/layoutlmv3-finetuned_1.2"  # Update with your model path
 
 try:
     processor = LayoutLMv3Processor.from_pretrained(model_name_or_path, apply_ocr=False)
@@ -113,7 +113,7 @@ def process_pdf(file_path):
     return json_output
 
 def main():
-    pdf_path = "./T.S-GWR binaya modified 15.pdf"  # Update with your PDF file path
+    pdf_path = "./document with list style dot.pdf"  # Update with your PDF file path
     result = process_pdf(pdf_path)
 
     if result:

@@ -40,3 +40,4 @@ src/*.bin
 src/image
 /inputs
 /images
+/Training_images_alpha1.2
