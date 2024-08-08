@@ -1,0 +1,546 @@
+[
+    {
+        "file_name": "./T.S-GWR-pages_F_7.pdf",
+        "page": 1,
+        "height": 842.0399780273438,
+        "width": 595.5599975585938,
+        "annotations": [
+            {
+                "box": [
+                    87,
+                    45,
+                    200,
+                    957
+                ],
+                "text": "S BD Document Monday",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    87,
+                    943,
+                    218,
+                    957
+                ],
+                "text": ", May 20 ,",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    222,
+                    943,
+                    260,
+                    957
+                ],
+                "text": "2024",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    820,
+                    942,
+                    854,
+                    956
+                ],
+                "text": "pg . 1",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    96,
+                    87,
+                    114,
+                    104
+                ],
+                "text": "1",
+                "label": "LABEL_0"
+            },
+            {
+                "box": [
+                    96,
+                    87,
+                    114,
+                    104
+                ],
+                "text": ".",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    192,
+                    87,
+                    355,
+                    104
+                ],
+                "text": "IN TR ODUCT ION :",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    96,
+                    154,
+                    132,
+                    170
+                ],
+                "text": "1 . 1",
+                "label": "LABEL_0"
+            },
+            {
+                "box": [
+                    96,
+                    154,
+                    472,
+                    170
+                ],
+                "text": ". GR OUND W ATER RES ER VO IR :",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    96,
+                    190,
+                    150,
+                    207
+                ],
+                "text": "1 . 1 . 1",
+                "label": "LABEL_0"
+            },
+            {
+                "box": [
+                    96,
+                    190,
+                    263,
+                    207
+                ],
+                "text": ". Change",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    268,
+                    190,
+                    358,
+                    207
+                ],
+                "text": "D",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    192,
+                    190,
+                    829,
+                    237
+                ],
+                "text": "urg ap ur Steel Plant is getting water for industrial purpose from",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    246,
+                    220,
+                    286,
+                    237
+                ],
+                "text": "D",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    246,
+                    220,
+                    629,
+                    237
+                ],
+                "text": "VC water supply canal , maintained by",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    636,
+                    220,
+                    682,
+                    237
+                ],
+                "text": "D VC",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    192,
+                    220,
+                    829,
+                    267
+                ],
+                "text": ". Water is lifted from the canal through a set of pumps installed at Canal",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    710,
+                    251,
+                    829,
+                    267
+                ],
+                "text": "Pump House",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    192,
+                    281,
+                    829,
+                    298
+                ],
+                "text": "and is stored in the Ground Water Reserv oir ( G WR ). The rese",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    741,
+                    281,
+                    829,
+                    298
+                ],
+                "text": "i",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    741,
+                    281,
+                    829,
+                    298
+                ],
+                "text": "\u00e2\u0122 \u013b",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    741,
+                    281,
+                    829,
+                    298
+                ],
+                "text": "v",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    192,
+                    281,
+                    829,
+                    420
+                ],
+                "text": "oir was put into operation in 1959 in order to reserve water drawn from canal and allow it for settling to reduce turb idity . Sett led water is pumped to plant for industrial and domestic water through a set",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    244,
+                    403,
+                    263,
+                    420
+                ],
+                "text": "of",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    192,
+                    403,
+                    829,
+                    604
+                ],
+                "text": "pumps installed at Work Pump House . Since inception it is functioning satisf actor ily and taking care of any fluct uation in supply / demand of water . \u00e2\u0122\u00a2 The reservoir was designed 1 . to hold total 1 . 925 Million Cub ic met ei ( M m 3 ) of water , out of which",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    539,
+                    588,
+                    580,
+                    604
+                ],
+                "text": "1",
+                "label": "LABEL_0"
+            },
+            {
+                "box": [
+                    319,
+                    588,
+                    829,
+                    635
+                ],
+                "text": ". 05 M m 3 . was live storage capacity and",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    288,
+                    664,
+                    306,
+                    681
+                ],
+                "text": "2",
+                "label": "LABEL_0"
+            },
+            {
+                "box": [
+                    288,
+                    664,
+                    829,
+                    926
+                ],
+                "text": ". 0 . 85 M m 3 was dead storage capacity . Due to top ography of the bottom of the reservoir , 3 . large volume of water remains trapped in localized deep pockets and cannot be drawn below certain levels , 4 . This has formed the dead storage volume . Dead storage space is utilized for s ilt ation and in case of extreme situation ,",
+                "label": "LABEL_1"
+            }
+        ]
+    },
+    {
+        "file_name": "./T.S-GWR-pages_F_7.pdf",
+        "page": 2,
+        "height": 842.0399780273438,
+        "width": 595.5599975585938,
+        "annotations": [
+            {
+                "box": [
+                    87,
+                    45,
+                    117,
+                    58
+                ],
+                "text": "S BD",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    121,
+                    45,
+                    200,
+                    58
+                ],
+                "text": "Document",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    87,
+                    942,
+                    854,
+                    957
+                ],
+                "text": "Monday , May 20 , 2024 pg . 2",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    288,
+                    86,
+                    829,
+                    133
+                ],
+                "text": "5 . part of this capacity can be util ised , though the quality of water at this level of reservoir deter",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    714,
+                    117,
+                    829,
+                    133
+                ],
+                "text": "io",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    319,
+                    117,
+                    829,
+                    164
+                ],
+                "text": "I ates drastically .",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    327,
+                    193,
+                    423,
+                    394
+                ],
+                "text": "i . WS 1 ii . WS 2 iii . W s 3 iv . WS 4 v . WS",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    379,
+                    378,
+                    423,
+                    394
+                ],
+                "text": "5",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    96,
+                    429,
+                    150,
+                    445
+                ],
+                "text": "1 . 1 . 2",
+                "label": "LABEL_0"
+            },
+            {
+                "box": [
+                    96,
+                    429,
+                    829,
+                    567
+                ],
+                "text": ". Scope : For last few years it has been observed that supply of water through D VC canal has become erratic . Se vere shortage of water in the canal in several occasions is putting D SP in a great risk of disruption in production . Frequency and duration of the disruption is increasing in each passing year .",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    210,
+                    581,
+                    222,
+                    598
+                ],
+                "text": "I .",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    252,
+                    581,
+                    333,
+                    598
+                ],
+                "text": "D s types",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    283,
+                    609,
+                    336,
+                    658
+                ],
+                "text": "\u00e2\u0138 \u00aa 1 a \u00e2\u0138 \u00aa",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    313,
+                    642,
+                    336,
+                    658
+                ],
+                "text": "2",
+                "label": "LABEL_0"
+            },
+            {
+                "box": [
+                    283,
+                    642,
+                    336,
+                    688
+                ],
+                "text": "a \u00e2\u0138 \u00aa",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    313,
+                    672,
+                    336,
+                    689
+                ],
+                "text": "3",
+                "label": "LABEL_0"
+            },
+            {
+                "box": [
+                    283,
+                    672,
+                    336,
+                    719
+                ],
+                "text": "a \u00e2\u0138 \u00aa 4 a",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    341,
+                    703,
+                    576,
+                    719
+                ],
+                "text": "\u00e2\u0122\u0135 Must be used carefully",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    283,
+                    731,
+                    337,
+                    750
+                ],
+                "text": "\u00e2\u0138 \u00aa 5",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    313,
+                    733,
+                    719,
+                    781
+                ],
+                "text": "b ( Table ) Sl . No Clause Clause dec s",
+                "label": "LABEL_1"
+            },
+            {
+                "box": [
+                    322,
+                    795,
+                    681,
+                    843
+                ],
+                "text": "1 W s W s - 101 2 DS DS - 102",
+                "label": "LABEL_2"
+            },
+            {
+                "box": [
+                    313,
+                    888,
+                    593,
+                    904
+                ],
+                "text": "----- ** End Document ** -------",
+                "label": "LABEL_1"
+            }
+        ]
+    },
+    {
+        "file_name": "./T.S-GWR-pages_F_7.pdf",
+        "page": 3,
+        "height": 842.0399780273438,
+        "width": 595.5599975585938,
+        "annotations": [
+            {
+                "box": [
+                    87,
+                    45,
+                    854,
+                    957
+                ],
+                "text": "S BD Document Monday , May 20 , 2024 pg . 3",
+                "label": "LABEL_2"
+            }
+        ]
+    }
+]
