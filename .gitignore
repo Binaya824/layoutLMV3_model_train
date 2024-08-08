@@ -1,0 +1,44 @@
+# Virtual environment
+/layoutLMV3_model_trainvenv/
+/layoutLMV3_model_trainENV/
+/layoutLMV3_model_trainProject_env/
+/layoutLMV3_model_train# Dependency directories
+/layoutLMV3_model_train/.venv/
+/layoutLMV3_model_train/dist/
+/layoutLMV3_model_train/build/
+/layoutLMV3_model_train
+/layoutLMV3_model_train# Dependency files
+/layoutLMV3_model_train/*.egg-info/
+/layoutLMV3_model_train*.egg
+/layoutLMV3_model_train*.egg-info
+/layoutLMV3_model_train*.pip
+/layoutLMV3_model_train*.log
+/layoutLMV3_model_trainpip-log.txt
+/layoutLMV3_model_trainpip-delete-this-directory.txt
+/layoutLMV3_model_train/.idea/
+/layoutLMV3_model_train.vscode/
+/layoutLMV3_model_train*.pyc
+/layoutLMV3_model_train*.pyo
+/layoutLMV3_model_trainsrc/__pycache__/
+/layoutLMV3_model_train
+/layoutLMV3_model_train# Environment configuration
+/layoutLMV3_model_train.env
+/layoutLMV3_model_train/.env.*
+/layoutLMV3_model_train
+/layoutLMV3_model_train# User-specific files
+/layoutLMV3_model_train.DS_Store
+/layoutLMV3_model_trainThumbs.db
+/layoutLMV3_model_train
+/layoutLMV3_model_train# Compiled binaries
+/layoutLMV3_model_train*.so
+/layoutLMV3_model_train*.dll
+/layoutLMV3_model_train*.pyd
+/layoutLMV3_model_train*.exe
+/layoutLMV3_model_train*.out
+/layoutLMV3_model_train*.log
+/layoutLMV3_model_trainsrc/*.bin
+/layoutLMV3_model_trainsrc/image
+/layoutLMV3_model_train/inputs
+/layoutLMV3_model_train/images
+./layoutLMV3_model_train/training_images_beta_0.1
+/myenv
